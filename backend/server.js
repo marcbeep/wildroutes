@@ -5,6 +5,9 @@ require('dotenv').config()
 //Require router
 const routes = require('./routes/routes')
 
+//Require mongoose
+const mongoose = require('mongoose')
+
 // Require express package and invoke express method
 const express = require('express')
 const app = express()
@@ -28,8 +31,17 @@ app.get('/', (req, res) => {
 })
 */ 
 
-//Listen for requests
-app.listen(process.env.PORT, () => {
-    //Note use of fn to log
-    console.log('Listening on port', process.env.PORT)
+// Connect to database
+mongoose.connect(process.env.MONG_URI)
+    .then(() => {
+        //Listen for requests
+        app.listen(process.env.PORT, () => {
+        //Note use of fn to log
+        console.log('Connected to Database. Listening on port', process.env.PORT)
 })
+    })
+    .catch(() => {
+        console.log(error)
+    })
+
+
