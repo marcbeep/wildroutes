@@ -2,6 +2,9 @@
 const express = require('express')
 const router = express.Router()
 
+// Import model
+const Route = require('../models/routemodel')
+
 // Get all routes
 router.get('/', (req, res) => {
     res.json({mssg: "GET all routes"})
@@ -13,7 +16,16 @@ router.get('/:id', (req, res) => {
 })
 
 // Post a new route
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+    const{title, description, location} = req.body
+    
+    try{
+        const route = await Route.create({title, description, location})
+        res.status(200).json(route)
+    }catch(error){
+        res.status(400).json({error: error.message})
+    }
+
     res.json({mssg: "POST a new route"})
 })
 
