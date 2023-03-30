@@ -3,7 +3,8 @@
 
 /* layout */
 :root {
-  --primary: #1aac83;
+  --primary: #00a173;
+  --secondary: #00be88;
   --error: #e7195a;
 }
 body {
@@ -17,7 +18,7 @@ header {
 header .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 10px 70px;
   display: flex;
   align-items: center; /*Vertical justifying of content*/
   justify-content: space-between;
@@ -28,6 +29,50 @@ header a {
 }
 .pages{
   max-width: 1400px;
-  padding: 20px;
+  padding: 50px;
   margin: 0 auto;
+}
+/* homepage */
+.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+
+/* route details */
+
+.route-details {
+  background: #fff;
+  border-radius: 25px;
+  margin: 20px auto;
+  padding: 50px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.route-details h2 {
+  margin: 0 0 10px 0;
+  font-size: 2.0em;
+  color: var(--primary);
+}
+
+.route-details h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--secondary);
+}
+.route-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+.route-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
 }

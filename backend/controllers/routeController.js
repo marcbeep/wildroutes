@@ -54,7 +54,7 @@ const deleteRoute = async(req, res) => {
     const route = await Route.findOneAndDelete({_id : id})
 
     if(!route){
-        return res.ststus(400).json({error: 'No such route'})
+        return res.status(400).json({error: 'No such route'})
     }
 
     res.status(200).json(route)
