@@ -42,12 +42,50 @@ const createRoute = async(req, res) => {
 }
 
 // Delete single route
+const deleteRoute = async(req, res) => {
+    const {id} = req.params
+
+    // Checks to see if id is valid
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'No such route'})
+    }
+
+    // The property name is not just id but _id
+    const route = await Route.findOneAndDelete({_id : id})
+
+    if(!route){
+        return res.ststus(400).json({error: 'No such route'})
+    }
+
+    res.status(200).json(route)
+}
 
 // Update single route
+const updateRoute = async (req, res) => {
+    const {id} = req.params
+
+    // Checks to see if id is valid
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'No such route'})
+    }
+
+    const route = await Route.findOneAndUpdate({_id : id}, {
+        // Spread properties of object
+        ...req.body
+    })
+
+    if(!route){
+        return res.status(400).json({error: 'No such route'})
+    }
+
+    res.status(200).json(route)
+}
 
 // Exports
 module.exports = {
     getRoutes,
     getRoute,
-    createRoute
+    createRoute,
+    deleteRoute,
+    updateRoute
 }

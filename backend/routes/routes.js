@@ -2,7 +2,9 @@
 const {
     getRoutes,
     getRoute,
-    createRoute
+    createRoute,
+    deleteRoute,
+    updateRoute
 }= require('../controllers/routeController')
 
 // We create the express router
@@ -19,14 +21,10 @@ router.get('/:id', getRoute)
 router.post('/', createRoute)
 
 // Delete a route
-router.delete('/:id', (req, res) => {
-    res.json({mssg: "DELETE a single route"})
-})
+router.delete('/:id', deleteRoute)
 
 // Update a route
-router.patch('/:id', (req, res) => {
-    res.json({mssg: "UPDATE a single route"})
-})
+router.patch('/:id', updateRoute)
 
 // Exports router
 module.exports = router 
