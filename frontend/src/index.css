@@ -6,14 +6,16 @@
   --primary: #00a173;
   --secondary: #00be88;
   --error: #e7195a;
+  --beige: #F5EFE0;
+  --moss: #8B9991;
 }
 body {
-  background: #f1f1f1;
+  background: var(--beige);
   margin: 0;
   font-family: "Poppins";
 }
 header {
-  background: #fff;
+  background: var(--moss);
 }
 header .container {
   max-width: 1400px;
@@ -24,7 +26,8 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: #333;
+  /*color: var(--beige);*/
+  color: white;
   text-decoration: none;
 }
 .pages{
