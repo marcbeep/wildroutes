@@ -1,10 +1,11 @@
-import {useEffect, useState} from 'react'
+import {useEffect} from 'react'
+import {useRoutesContext} from '../hooks/useRoutesContext'
 
 //components
 import RouteDetails from '../components/RouteDetails'
 
 const Home = () =>{
-    const [routes, setRoutes] = useState(null)
+    const {routes, dispatch} = useRoutesContext()
 
     useEffect(() => {
         const fetchRoutes = async() => {
@@ -16,7 +17,7 @@ const Home = () =>{
             const json = await response.json()
 
             if(response.ok){
-                setRoutes(json)
+                dispatch({type: 'SET_ROUTES', payload: json})
             }
         }
         fetchRoutes()
