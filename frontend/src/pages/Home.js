@@ -1,5 +1,5 @@
-import {useEffect} from 'react'
-import {useRoutesContext} from '../hooks/useRoutesContext'
+import {useEffect} from "react"
+import {useRoutesContext} from "../hooks/useRoutesContext"
 
 //components
 import RouteDetails from '../components/RouteDetails'
@@ -21,12 +21,12 @@ const Home = () =>{
             }
         }
         fetchRoutes()
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="home">
             <div className ="routes">
-                {routes && routes.map((route) => (
+                {routes && routes.map(route => (
                     <RouteDetails key={route._id} route ={route} />
                 ))}
             </div>

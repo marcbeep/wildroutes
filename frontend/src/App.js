@@ -1,7 +1,7 @@
 // Ensure npm install react-router-dom
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 
-// Pages and Componenets
+// Pages and Components
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
 
