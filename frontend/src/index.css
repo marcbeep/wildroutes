@@ -38,7 +38,7 @@ header a {
 .home {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: 500px;
 }
 
 /* route details */
