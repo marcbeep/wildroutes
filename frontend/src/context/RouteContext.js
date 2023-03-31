@@ -12,6 +12,10 @@ export const routesReducer = (state, action) => {
             return {
                 routes: [action.payload, ...state.routes]
             }
+        case 'DELETE_ROUTE':
+            return{
+                routes: state.routes.filter((r) => r._id !== action.payload._id)
+            }
         default:
             return state
     }
