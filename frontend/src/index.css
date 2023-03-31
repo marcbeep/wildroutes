@@ -26,7 +26,6 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  /*color: var(--beige);*/
   color: white;
   text-decoration: none;
 }
@@ -47,7 +46,7 @@ header a {
 .route-details {
   background: #fff;
   border-radius: 25px;
-  margin: 20px auto;
+  margin: 20px;
   padding: 50px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
@@ -55,20 +54,21 @@ header a {
 
 .route-details h2 {
   margin: 0 0 10px 0;
-  font-size: 2.0em;
-  color: var(--primary);
+  font-size: 1.5em;
+  color: black;
 }
 
 .route-details h3 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
-  color: var(--secondary);
+  color: var(--moss);
 }
 .route-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
+
 .route-details span {
   position: absolute;
   top: 20px;
