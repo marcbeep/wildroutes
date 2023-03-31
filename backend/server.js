@@ -4,6 +4,8 @@ require('dotenv').config()
 
 //Require router
 const routes = require('./routes/routes')
+const userRoutes = require('./routes/user')
+
 
 //Require mongoose
 const mongoose = require('mongoose')
@@ -24,6 +26,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/api/routes', routes)
+app.use('/api/user', userRoutes)
 
 /* Set up a route handler requests and responses
 app.get('/', (req, res) => {
