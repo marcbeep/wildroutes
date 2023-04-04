@@ -14,6 +14,10 @@ const routeSchema = new Schema({
     location:{
         type: String,
         required: true
+    },
+    user_id:{
+        type: String,
+        required: true
     }
 })
 

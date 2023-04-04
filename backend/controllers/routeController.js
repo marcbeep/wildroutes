@@ -6,12 +6,14 @@ const mongoose = require('mongoose')
 
 // Get all routes
 const getRoutes = async(req, res) => {
-    const routes = await Route.find({})
+    const user_id = req.user._id
+    const routes = await Route.find({user_id})
     res.status(200).json(routes)
 }
 
 // Get single route
 const getRoute = async(req, res) => {
+
     const {id} = req.params
 
     // Checks to see if id is valid
@@ -34,7 +36,8 @@ const createRoute = async(req, res) => {
     
     // Add doc to db
     try{
-        const route = await Route.create({title, description, location})
+        const user_id = req.user._id
+        const route = await Route.create({title, description, location, user_id})
         res.status(200).json(route)
     }catch(error){
         res.status(400).json({error: error.message})
