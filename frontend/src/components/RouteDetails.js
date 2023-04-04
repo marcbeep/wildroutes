@@ -1,4 +1,3 @@
-
 import {useRoutesContext} from '../hooks/useRoutesContext'
 const RouteDetails = ({route}) => {
 
