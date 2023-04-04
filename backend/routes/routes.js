@@ -7,9 +7,14 @@ const {
     updateRoute
 }= require('../controllers/routeController')
 
+const requireAuth = require('../middleware/requireAuth')
+
 // We create the express router
 const express = require('express')
 const router = express.Router()
+
+//require auth for all routes
+router.use(requireAuth)
 
 // Get all routes
 router.get('/', getRoutes)
