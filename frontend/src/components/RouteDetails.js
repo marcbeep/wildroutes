@@ -1,11 +1,22 @@
 import {useRoutesContext} from '../hooks/useRoutesContext'
+import { useAuthContext } from '../hooks/useAuthContext'
+
 const RouteDetails = ({route}) => {
 
     const {dispatch} = useRoutesContext()
+    const {user} = useAuthContext()
 
     const handleClick = async() => {
+
+        if(!user){
+            return
+        }
+
         const response = await fetch('/api/routes/' + route._id, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers:{
+                'Authorization': `Bearer ${user.token}`
+            }
         })
         const json = await response.json()
 
