@@ -12,8 +12,8 @@ const RouteDetails = ({route}) => {
             return
         }
 
-        const response = await fetch('/api/routes/' + route._id, {
-            method: 'DELETE',
+        const response = await fetch('/api/routes/like/' + route._id, {
+            method: 'PATCH',
             headers:{
                 'Authorization': `Bearer ${user.token}`
             }
@@ -21,16 +21,18 @@ const RouteDetails = ({route}) => {
         const json = await response.json()
 
         if(response.ok){
-            dispatch({type: 'DELETE_ROUTE', payload: json})
+            dispatch({type: 'SET_ROUTE', payload: json})
+            /*Reload is a temporary solution. Ideally, it would update without refreshing.*/ 
+            window.location.reload(); 
         }
     }
 
     return(
         <div className="route-details">
-            <h2>{route.title}</h2>
+            <h2>{route.title} {route.liked}</h2>
             <h3>{route.location}</h3>
             <p>{route.description}</p>
-            <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
+            <span className="material-symbols-outlined" onClick={handleClick}>favorite</span>
         </div>
     )
 }

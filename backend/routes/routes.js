@@ -4,7 +4,8 @@ const {
     getRoute,
     createRoute,
     deleteRoute,
-    updateRoute
+    updateRoute,
+    likeRoute
 }= require('../controllers/routeController')
 
 const requireAuth = require('../middleware/requireAuth')
@@ -27,6 +28,9 @@ router.post('/', createRoute)
 
 // Delete a route
 router.delete('/:id', deleteRoute)
+
+// Like a route
+router.patch('/like/:id', likeRoute)
 
 // Update a route
 router.patch('/:id', updateRoute)

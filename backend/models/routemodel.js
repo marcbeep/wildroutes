@@ -15,6 +15,11 @@ const routeSchema = new Schema({
         type: String,
         required: true
     },
+    liked:{
+        type: String,
+        required: true,
+        default: " "
+    },
     user_id:{
         type: String,
         required: true
