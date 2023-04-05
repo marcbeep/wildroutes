@@ -19,7 +19,7 @@ const Navbar = () => {
                 <nav>
                     {user && (
                     <div>
-                        <button onClick={handleClick}>Logout {user.name}</button>
+                        <button onClick={handleClick}>Logout {user.email}</button>
                     </div>
                     )}
                     {!user &&(
