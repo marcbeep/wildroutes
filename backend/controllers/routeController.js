@@ -11,6 +11,13 @@ const getRoutes = async(req, res) => {
     res.status(200).json(routes)
 }
 
+// Get all LIKED routes
+const getLikedRoutes = async(req, res) => {
+    const user_id = req.user._id
+    const routes = await Route.find({location: "Cornwall"})
+    res.status(200).json(routes)
+}
+
 // Get single route
 const getRoute = async(req, res) => {
 
@@ -107,6 +114,7 @@ const updateRoute = async (req, res) => {
 // Exports
 module.exports = {
     getRoutes,
+    getLikedRoutes,
     getRoute,
     createRoute,
     deleteRoute,

@@ -1,6 +1,7 @@
 // Imports
 const {
     getRoutes,
+    getLikedRoutes,
     getRoute,
     createRoute,
     deleteRoute,
@@ -19,6 +20,9 @@ router.use(requireAuth)
 
 // Get all routes
 router.get('/', getRoutes)
+
+// Get all liked routes
+router.get('/liked', getLikedRoutes)
 
 // Get a single route
 router.get('/:id', getRoute)
