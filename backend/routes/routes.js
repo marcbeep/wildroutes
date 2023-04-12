@@ -1,6 +1,7 @@
 // Imports
 const {
     getRoutes,
+    getRoutesByLocation,
     getLikedRoutes,
     getRoute,
     createRoute,
@@ -20,6 +21,9 @@ router.use(requireAuth)
 
 // Get all routes
 router.get('/', getRoutes)
+
+// Get routes by location
+router.get('/location', getRoutesByLocation)
 
 // Get all liked routes
 router.get('/liked', getLikedRoutes)

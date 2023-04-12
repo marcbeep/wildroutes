@@ -12,6 +12,14 @@ const getRoutes = async(req, res) => {
     res.status(200).json(routes)
 }
 
+// Get routes by location
+const getRoutesByLocation = async(req, res) => {
+    // Remove hard coding of Liverpool
+    // Get userLocation from database
+    const routes = await Route.find({location:"Liverpool"})
+    res.status(200).json(routes)
+}
+
 // Like a single route
 const likeRoute = async(req, res) => {
     const {id} = req.params
@@ -118,6 +126,7 @@ const updateRoute = async (req, res) => {
 // Exports
 module.exports = {
     getRoutes,
+    getRoutesByLocation,
     getLikedRoutes,
     getRoute,
     createRoute,
