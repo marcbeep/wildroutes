@@ -25,7 +25,7 @@ const MyAdventures = () =>{
             const json = await response.json()
 
             if(response.ok){
-                dispatch({type: 'SET_ROUTE', payload: json})
+                dispatch({type: 'SET_ROUTES', payload: json})
             }
         }
         if(user){
