@@ -6,8 +6,9 @@ const mongoose = require('mongoose')
 
 // Get all routes
 const getRoutes = async(req, res) => {
-    const user_id = req.user._id
-    const routes = await Route.find({user_id})
+    //const user_id = req.user._id
+    //const routes = await Route.find({user_id})
+    const routes = await Route.find({})
     res.status(200).json(routes)
 }
 
