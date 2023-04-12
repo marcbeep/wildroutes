@@ -1,5 +1,6 @@
 // Import model
 const Route = require('../models/routemodel')
+const User = require('../controllers/userController')
 
 // Import mongoose
 const mongoose = require('mongoose')
