@@ -23,7 +23,12 @@ const routeSchema = new Schema({
     user_id:{
         type: String,
         required: true
-    }
+    },
+    likedBy:[
+        {
+            type: String
+        }
+    ]
 })
 
 // A model applies that schema to a particular model

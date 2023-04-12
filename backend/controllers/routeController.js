@@ -11,9 +11,31 @@ const getRoutes = async(req, res) => {
     res.status(200).json(routes)
 }
 
+// Like a single route
+const likeRoute = async(req, res) => {
+    const {id} = req.params
+    const user_id = req.user._id
+
+    // Checks to see if id is valid
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'No such route'})
+    }
+
+    const route = await Route.findOneAndUpdate({_id : id}, {$push : {likedBy: user_id}})
+
+    if(!route){
+        return res.status(400).json({error: 'No such route'})
+    }
+    
+    res.status(200).json(route)
+    
+
+}
+
 // Get all LIKED routes
 const getLikedRoutes = async(req, res) => {
-    const routes = await Route.find({liked:"❤️"})
+    const user_id = req.user._id
+    const routes = await Route.find({likedBy:user_id})
     res.status(200).json(routes)
 }
 
@@ -69,25 +91,7 @@ const deleteRoute = async(req, res) => {
     res.status(200).json(route)
 }
 
-// Like a single route
-const likeRoute = async(req, res) => {
-    const {id} = req.params
 
-    // Checks to see if id is valid
-    if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error: 'No such route'})
-    }
-
-    const route = await Route.findOneAndUpdate({_id : id}, {liked: "❤️"})
-
-    if(!route){
-        return res.status(400).json({error: 'No such route'})
-    }
-    
-    res.status(200).json(route)
-    
-
-}
 
 // Update single route
 const updateRoute = async (req, res) => {
