@@ -9,7 +9,7 @@ const mongoose = require('mongoose')
 const getRoutes = async(req, res) => {
     //const user_id = req.user._id
     //const routes = await Route.find({user_id})
-    const routes = await Route.find({})
+    const routes = await Route.find({}).sort({"location": 1})
     res.status(200).json(routes)
 }
 
@@ -45,7 +45,7 @@ const likeRoute = async(req, res) => {
 // Get all LIKED routes
 const getLikedRoutes = async(req, res) => {
     const user_id = req.user._id
-    const routes = await Route.find({likedBy:user_id})
+    const routes = await Route.find({likedBy:user_id}).sort({"location": 1})
     res.status(200).json(routes)
 }
 

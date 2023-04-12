@@ -19,7 +19,8 @@ const Navbar = () => {
                 <nav>
                     {user && (
                     <div>
-                        <Link to="/myadventures">My Adventures</Link>
+                        <Link to="/">🏡 Home</Link>
+                        <Link to="/myadventures"> 🗺️ My Adventures</Link>
                         <button onClick={handleClick}>Logout {user.userName}</button>
                     </div>
                     )}
