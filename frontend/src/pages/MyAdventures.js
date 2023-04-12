@@ -17,8 +17,6 @@ const MyAdventures = () =>{
         const fetchRoutes = async() => {
 
             // Fetch logic lives here
-
-            //For production, every request points to correct endpoints
             const response = await fetch('/api/routes/liked', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`

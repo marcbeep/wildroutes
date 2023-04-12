@@ -13,8 +13,7 @@ const getRoutes = async(req, res) => {
 
 // Get all LIKED routes
 const getLikedRoutes = async(req, res) => {
-    const user_id = req.user._id
-    const routes = await Route.find({location: "Cornwall"})
+    const routes = await Route.find({liked:"❤️"})
     res.status(200).json(routes)
 }
 

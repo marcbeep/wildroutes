@@ -26,10 +26,10 @@ const RouteDetails = ({route}) => {
             window.location.reload(); 
         }
     }
-
+    /* Return of Route Title + Liked happens below*/
     return(
         <div className="route-details">
-            <h2>{route.title} {route.liked}</h2>
+            <h2>{route.title} {route.liked}</h2> 
             <h3>{route.location}</h3>
             <p>{route.description}</p>
             <span className="material-symbols-outlined" onClick={handleClick}>favorite</span>
