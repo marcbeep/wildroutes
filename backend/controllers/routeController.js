@@ -39,59 +39,12 @@ const getRegion = async(req, res) => {
     res.status(200).json(routes)
 }
 
-// Get south west
+// Get tag
 
-const getsw = async(req, res) => {
-    const routes = await Route.find({region: "sw"})
-    res.status(200).json(routes)
-}
-
-// Get south east
-
-const getse = async(req, res) => {
-    const routes = await Route.find({region: "se"})
-    res.status(200).json(routes)
-}
-
-// Get east
-
-const gete = async(req, res) => {
-    const routes = await Route.find({region: "e"})
-    res.status(200).json(routes)
-}
-
-// Get midlands
-
-const getm = async(req, res) => {
-    const routes = await Route.find({region: "m"})
-    res.status(200).json(routes)
-}
-
-// Get north west
-
-const getnw = async(req, res) => {
-    const routes = await Route.find({region: "nw"})
-    res.status(200).json(routes)
-}
-
-// Get north east
-
-const getne = async(req, res) => {
-    const routes = await Route.find({region: "ne"})
-    res.status(200).json(routes)
-}
-
-// Get wales
-
-const getw = async(req, res) => {
-    const routes = await Route.find({region: "w"})
-    res.status(200).json(routes)
-}
-
-// Get scotland
-
-const gets = async(req, res) => {
-    const routes = await Route.find({region: "s"})
+const getTag = async(req, res) => {
+    const {tag} = req.params
+    console.log(tag)
+    const routes = await Route.find({tag: tag})
     res.status(200).json(routes)
 }
 
@@ -176,6 +129,7 @@ module.exports = {
     getRoutes,
     getRoute,
     getRegion,
+    getTag,
     likeRoute,
     getLikedRoutes,
     createRoute,

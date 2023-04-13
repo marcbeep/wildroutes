@@ -3,6 +3,7 @@ const {
     getRoutes,
     getRoute,
     getRegion,
+    getTag,
     likeRoute,
     getLikedRoutes,
     createRoute,
@@ -26,7 +27,10 @@ router.get('/', getRoutes)
 router.get('/:id', getRoute)
 
 // Get region
-router.get('/test/:region', getRegion)
+router.get('/region/:region', getRegion)
+
+// Get tag
+router.get('/tag/:tag', getTag)
 
 // Like a route
 router.patch('/like/:id', likeRoute)
