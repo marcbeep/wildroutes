@@ -68,10 +68,20 @@ header a {
 }
 
 /* form */
-label, input {
-  display: block;
+.region-form{
+  background: #fff;
+  border-radius: 25px;
+  margin: 20px auto;
+  padding: 30px 20px;
+  position: relative;
+  height: 150px;
 }
-input {
+
+label, input, select {
+  display: block;
+  font-family: "Poppins";
+}
+input, select {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;

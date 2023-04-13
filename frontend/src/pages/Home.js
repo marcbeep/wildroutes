@@ -4,6 +4,7 @@ import {useAuthContext} from '../hooks/useAuthContext'
 
 //components
 import RouteDetails from '../components/RouteDetails'
+import RegionForm from '../components/RegionForm'
 
 const Home = () =>{
     const {routes, dispatch} = useRoutesContext()
@@ -38,6 +39,8 @@ const Home = () =>{
                     <RouteDetails key={route._id} route ={route} />
                 ))}
             </div>
+            <RegionForm />
+            
         </div>
     )
 }
