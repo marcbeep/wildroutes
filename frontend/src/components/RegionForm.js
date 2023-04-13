@@ -3,10 +3,12 @@ import { useState } from 'react'
 const RegionForm = () => {
 
   const [region, setRegion] = useState('')
+  const test = "hello"
 
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(e.target.value)
+    console.log(test)
   } 
 
   return (
