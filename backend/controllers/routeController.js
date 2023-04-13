@@ -67,6 +67,7 @@ const likeRoute = async(req, res) => {
 // Get all Liked routes
 const getLikedRoutes = async(req, res) => {
     const user_id = req.user._id
+    console.log(user_id)
     const routes = await Route.find({likedBy:user_id}).sort({"location": 1})
     res.status(200).json(routes)
 }
