@@ -23,9 +23,6 @@ router.use(requireAuth)
 // Get all routes
 router.get('/', getRoutes)
 
-// Get a single route
-router.get('/:id', getRoute)
-
 // Get region
 router.get('/region/:region', getRegion)
 
@@ -46,6 +43,9 @@ router.delete('/:id', deleteRoute)
 
 // Update a route
 router.patch('/:id', updateRoute)
+
+// Get a single route
+router.get('/:id', getRoute)
 
 // Exports router
 module.exports = router 
