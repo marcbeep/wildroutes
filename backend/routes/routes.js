@@ -1,13 +1,13 @@
 // Imports
 const {
     getRoutes,
-    getRoutesByLocation,
-    getLikedRoutes,
     getRoute,
+    getRegion,
+    likeRoute,
+    getLikedRoutes,
     createRoute,
     deleteRoute,
-    updateRoute,
-    likeRoute
+    updateRoute
 }= require('../controllers/routeController')
 
 const requireAuth = require('../middleware/requireAuth')
@@ -22,23 +22,23 @@ router.use(requireAuth)
 // Get all routes
 router.get('/', getRoutes)
 
-// Get routes by location
-router.get('/location', getRoutesByLocation)
+// Get a single route
+router.get('/:id', getRoute)
+
+// Get region
+router.get('/test/:region', getRegion)
+
+// Like a route
+router.patch('/like/:id', likeRoute)
 
 // Get all liked routes
 router.get('/liked', getLikedRoutes)
-
-// Get a single route
-router.get('/:id', getRoute)
 
 // Post a new route
 router.post('/', createRoute)
 
 // Delete a route
 router.delete('/:id', deleteRoute)
-
-// Like a route
-router.patch('/like/:id', likeRoute)
 
 // Update a route
 router.patch('/:id', updateRoute)
