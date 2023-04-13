@@ -6,8 +6,8 @@ const routeSchema = new Schema({
     title: {
         type: String,
         required: true
-    },
-    description:{
+    },    
+    region:{
         type: String,
         required: true
     },
@@ -15,13 +15,22 @@ const routeSchema = new Schema({
         type: String,
         required: true
     },
-    user_id:{
+    description:{
         type: String,
         required: true
     },
+    tag:{
+        type: String,
+        required: true
+    },
+    noLikes:{
+        type: Number,
+        default: 0
+    },
     likedBy:[
         {
-            type: String
+            type: String,
+            default:""
         }
     ]
 })

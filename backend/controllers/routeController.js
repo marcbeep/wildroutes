@@ -70,12 +70,11 @@ const getRoute = async(req, res) => {
 
 // Create new route
 const createRoute = async(req, res) => {
-    const{title, description, location} = req.body
+    const{title, region, location, description, tag} = req.body
     
     // Add doc to db
     try{
-        const user_id = req.user._id
-        const route = await Route.create({title, description, location, user_id})
+        const route = await Route.create({title, region, location, description, tag})
         res.status(200).json(route)
     }catch(error){
         res.status(400).json({error: error.message})
