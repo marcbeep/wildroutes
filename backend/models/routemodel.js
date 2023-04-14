@@ -29,8 +29,7 @@ const routeSchema = new Schema({
     },
     likedBy:[
         {
-            type: String,
-            default:""
+            type: String
         }
     ]
 })

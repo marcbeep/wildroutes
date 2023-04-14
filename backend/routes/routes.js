@@ -5,6 +5,7 @@ const {
     getRegion,
     getTag,
     likeRoute,
+    unLikeRoute,
     getLikedRoutes,
     createRoute,
     deleteRoute,
@@ -31,6 +32,9 @@ router.get('/tag/:tag', getTag)
 
 // Like a route
 router.patch('/like/:id', likeRoute)
+
+// Unlike a route
+router.delete('/like/:id', unLikeRoute)
 
 // Get all liked routes
 router.get('/liked', getLikedRoutes)

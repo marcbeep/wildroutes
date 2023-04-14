@@ -64,6 +64,24 @@ const likeRoute = async(req, res) => {
     res.status(200).json(route)
 }
 
+const unLikeRoute = async(req, res) => {
+    const {id} = req.params
+    const user_id = req.user._id
+
+    // Checks to see if id is valid
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'No such route'})
+    }
+
+    const route = await Route.findOneAndUpdate({_id : id}, {$pull : {likedBy: user_id}})
+
+    if(!route){
+        return res.status(400).json({error: 'No such route'})
+    }
+    
+    res.status(200).json(route)
+}
+
 // Get all Liked routes
 const getLikedRoutes = async(req, res) => {
     const user_id = req.user._id
@@ -132,6 +150,7 @@ module.exports = {
     getRegion,
     getTag,
     likeRoute,
+    unLikeRoute,
     getLikedRoutes,
     createRoute,
     deleteRoute,

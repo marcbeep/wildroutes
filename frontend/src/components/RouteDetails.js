@@ -2,16 +2,13 @@ import {useRoutesContext} from '../hooks/useRoutesContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 const RouteDetails = ({route}) => {
-
     const {dispatch} = useRoutesContext()
     const {user} = useAuthContext()
 
-    const handleClick = async() => {
-
+    const likePost = async()=>{
         if(!user){
             return
         }
-
         const response = await fetch('/api/routes/like/' + route._id, {
             method: 'PATCH',
             headers:{
@@ -26,21 +23,43 @@ const RouteDetails = ({route}) => {
             window.location.reload(); 
         }
     }
-    /* Return of Route Title + Liked happens below*/
 
-    /*
-    To add heart next to title:
-    <h2>{route.title} {route.liked}
-    */
+    const unlikePost = async()=>{
+        if(!user){
+            return
+        }
+
+        const response = await fetch('/api/routes/like/' + route._id, {
+            method: 'DELETE',
+            headers:{
+                'Authorization': `Bearer ${user.token}`
+            }
+        })
+        const json = await response.json()
+
+        if(response.ok){
+            dispatch({type: 'DELETE_ROUTE', payload: json})
+            /*Reload is a temporary solution. Ideally, it would update without refreshing.*/ 
+            window.location.reload(); 
+        }
+    }
 
     return(
-        <div className="route-details">
+        <div id="route-details">
             <h2>{route.title}</h2> 
             <h3>{route.location}</h3>
             <p>{route.description}</p>
-            <span className="material-symbols-outlined" onClick={handleClick}>favorite</span>
+            {route.likedBy.includes(user.idCode)
+                ? 
+                    <i className="material-symbols-outlined"onClick={unlikePost}> close </i>
+                : 
+                    <i class="material-symbols-outlined"onClick={likePost}>favorite</i>
+            }
+            
+            <h6>{route.likedBy.length} likes</h6>
         </div>
     )
 }
 
+// <span className="material-symbols-outlined" onClick={handleClick}>favorite</span>
 export default RouteDetails

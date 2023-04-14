@@ -3,16 +3,16 @@
 
 /* layout */
 :root {
-  --primary: #1649FF;
+  --primary: #104a24;
   --error: #e7195a;
 }
 body {
-  background: #f1f1f1;
+  background: #fff;
   margin: 0;
   font-family: "Poppins";
 }
 header {
-  background: #fff;
+  background:#024b30;
 }
 header .container {
   max-width: 1400px;
@@ -23,8 +23,9 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: #333;
+  color: #fff;
   text-decoration: none;
+  text-align: center;
 }
 .pages{
   max-width: 1400px;
@@ -38,30 +39,30 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 40px;
 }
-.route-details {
-  background: #fff;
+#route-details {
+  background:  #f5f5f5;
   border-radius: 25px;
   margin: 20px auto;
   padding: 50px;
   position: relative;
 }
-.route-details h2 {
+#route-details h2 {
   margin: 0 0 -20px 0;
   padding-right: 30px;
   /*font-size: 1.2em;*/
   color: var(--primary);
 }
-.route-details p {
+#route-details p {
   margin: 0;
   font-size: 1.0em;
   color: #555;
 }
-.route-details span {
+#route-details i {
   position: absolute;
   top: 50px;
   right: 50px;
   cursor: pointer;
-  background: #f1f1f1;
+  background:  #f5f5f5;
   padding: 5px;
   border-radius: 50%;
   color: #333;
@@ -69,10 +70,10 @@ header a {
 
 /* form */
 .region-form{
-  background: #fff;
+  background: #f5f5f5;
   border-radius: 25px;
   margin: 20px auto;
-  padding: 10px 30px 50px 30px;
+  padding: 20px 50px 50px 40px;
   position: relative;
   height: 150px;
 }
@@ -135,6 +136,6 @@ form.signup, form.login {
   max-width: 400px;
   margin: 20px auto;
   padding: 50px;
-  background: #fff;
+  background: #f5f5f5;
   border-radius: 25px;
 }
