@@ -8,6 +8,7 @@ Concept: Load adventures based on if liked is set to <3.
 
 //components
 import RouteDetails from '../components/RouteDetails'
+import PostForm from "../components/PostForm"
 
 const MyAdventures = () =>{
     const {routes, dispatch} = useRoutesContext()
@@ -40,6 +41,7 @@ const MyAdventures = () =>{
                     <RouteDetails key={route._id} route ={route} />
                 ))}
             </div>
+            <PostForm/>
         </div>
     )
 }

@@ -31,7 +31,8 @@ const routeSchema = new Schema({
         {
             type: String
         }
-    ]
+    ],
+    madeBy: {type: String, default:"Admin"}
 })
 
 // A model applies that schema to a particular model

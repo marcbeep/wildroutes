@@ -16,6 +16,10 @@ export const routesReducer = (state, action) => {
             return{
                 routes: state.routes.filter((r) => r._id !== action.payload._id)
             }
+        case 'UPDATE_LIKE':
+            return{
+                routes: state.routes.filter((r) => r._id !== action.payload._id)
+            }
         default:
             return state
     }
