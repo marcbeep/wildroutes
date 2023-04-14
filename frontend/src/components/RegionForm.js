@@ -1,14 +1,36 @@
 import { useState } from 'react'
+import {useRoutesContext} from "../hooks/useRoutesContext"
+import {useAuthContext} from '../hooks/useAuthContext'
 
 const RegionForm = () => {
 
+  const {dispatch} = useRoutesContext()
+  const {user} = useAuthContext()
   const [region, setRegion] = useState('')
-  const test = "hello"
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(e.target.value)
-    console.log(test)
+    console.log(region)
+    var fetchLink = " "
+
+    if(region===" "){
+      fetchLink = '/api/routes/'
+    }else{
+      fetchLink = '/api/routes/region/'+region
+    }
+
+    // Fetch logic lives here
+    const response = await fetch(fetchLink, {
+      headers: {
+        'Authorization': `Bearer ${user.token}`
+    }
+    })
+    const json = await response.json()
+
+    if(response.ok){
+      dispatch({type: 'SET_ROUTES', payload: json})
+    }
+
   } 
 
   return (
@@ -20,9 +42,9 @@ const RegionForm = () => {
         onChange={(e) => setRegion(e.target.value)} 
         value={region}
         >
-          <option>All</option>  
+          <option value=" ">All</option>  
           <option value="sw">South West</option>
-          <option value="se">Midlands</option>
+          <option value="se">South East</option>
           <option value="m">Midlands</option>
           <option value="nw">North West</option>
           <option value="ne">North East</option>

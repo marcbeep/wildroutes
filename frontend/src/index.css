@@ -36,7 +36,7 @@ header a {
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  gap: 40px;
 }
 .route-details {
   background: #fff;
@@ -72,7 +72,7 @@ header a {
   background: #fff;
   border-radius: 25px;
   margin: 20px auto;
-  padding: 30px 20px;
+  padding: 10px 30px 50px 30px;
   position: relative;
   height: 150px;
 }
