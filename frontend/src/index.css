@@ -3,7 +3,7 @@
 
 /* layout */
 :root {
-  --primary: #104a24;
+  --primary: #1649FF;
   --error: #e7195a;
 }
 body {
@@ -12,7 +12,7 @@ body {
   font-family: "Poppins";
 }
 header {
-  background:#024b30;
+  background:#000;
 }
 header .container {
   max-width: 1400px;
@@ -121,9 +121,9 @@ nav a {
   margin-left: 10px;
 }
 nav button {
-  background: #fff;
-  color: var(--primary);
-  border: 2px solid var(--primary);
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
   padding: 6px 10px;
   border-radius: 4px;
   font-family: "Poppins";

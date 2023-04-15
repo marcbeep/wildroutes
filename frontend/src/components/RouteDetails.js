@@ -52,17 +52,17 @@ const RouteDetails = ({route}) => {
 
     return(
         <div id="route-details">
-            <h2>{route.title} - {route.region}</h2> 
+            <h2>{route.title}</h2> 
             <h3>{route.location}</h3>
-            <p>Uploaded By: {route.madeBy}</p>
             <p>{route.description}</p>
+            <h5>Book: {route.contactDetails}</h5>
             {route.likedBy.includes(user.idCode)
                 ? 
                     <i className="material-symbols-outlined"onClick={unlikePost}> close </i>
                 : 
                     <i className="material-symbols-outlined"onClick={likePost}>favorite</i>
             }
-            <h6>{route.likedBy.length} likes</h6>
+            <h6>Posted by {route.madeBy} - {route.likedBy.length} likes</h6>
             
         </div>
     )

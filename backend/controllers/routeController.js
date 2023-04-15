@@ -64,6 +64,8 @@ const likeRoute = async(req, res) => {
     res.status(200).json(route)
 }
 
+// Unlike a single route
+
 const unLikeRoute = async(req, res) => {
     const {id} = req.params
     const user_id = req.user._id
@@ -92,11 +94,11 @@ const getLikedRoutes = async(req, res) => {
 
 // Create new route
 const createRoute = async(req, res) => {
-    const{title, region, location, description, tag} = req.body
     
+    const{title, region, location, description, tag, madeBy, contactDetails} = req.body
     // Add doc to db
     try{
-        const route = await Route.create({title, region, location, description, tag})
+        const route = await Route.create({title, region, location, description, tag, madeBy, contactDetails})
         res.status(200).json(route)
     }catch(error){
         res.status(400).json({error: error.message})

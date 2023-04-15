@@ -5,23 +5,38 @@ const Schema = mongoose.Schema
 const routeSchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        default: "No title"
     },    
     region:{
         type: String,
-        required: true
+        required: true,
+        default: "No region"
     },
     location:{
         type: String,
-        required: true
+        required: true,
+        default: "No location"
     },
     description:{
         type: String,
-        required: true
+        required: true,
+        default: "No description"
     },
     tag:{
         type: String,
-        required: true
+        required: true,
+        default: "No tag"
+    },
+    madeBy:{
+        type: String,
+        required: true,
+        default: "Wildroutes Staff"
+    },
+    contactDetails:{
+        type: String,
+        required: true,
+        default: "No contact details"
     },
     noLikes:{
         type: Number,
@@ -31,8 +46,7 @@ const routeSchema = new Schema({
         {
             type: String
         }
-    ],
-    madeBy: {type: String, default:"Admin"}
+    ]
 })
 
 // A model applies that schema to a particular model
