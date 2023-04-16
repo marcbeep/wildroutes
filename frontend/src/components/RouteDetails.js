@@ -63,7 +63,6 @@ const RouteDetails = ({route}) => {
                     <i className="material-symbols-outlined"onClick={likePost}>favorite</i>
             }
             <h6>Posted by {route.madeBy} - {route.likedBy.length} likes</h6>
-            
         </div>
     )
 }
