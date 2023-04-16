@@ -46,7 +46,12 @@ const routeSchema = new Schema({
         {
             type: String
         }
-    ]
+    ],
+    image:{
+        type: String,
+        required: true,
+        default: "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-476744133-scaled.jpg"    
+    }
 })
 
 // A model applies that schema to a particular model

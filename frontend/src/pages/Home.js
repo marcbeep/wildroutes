@@ -34,12 +34,12 @@ const Home = () =>{
 
     return (
         <div className="home">
+            <RegionForm />
             <div className ="routes">
                 {routes && routes.map(route => (
                     <RouteDetails key={route._id} route ={route} />
                 ))}
             </div>
-            <RegionForm />
             
         </div>
     )
