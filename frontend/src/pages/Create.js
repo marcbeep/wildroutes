@@ -71,6 +71,7 @@ const Create = () => {
           </select>
 
             <input type ="text" placeholder = "Booking Link" onChange={(e) => setBookingLink(e.target.value)} value = {bookingLink}/>   
+            {console.log(bookingLink)}
 
             <input type ="text" placeholder = "Image Link" onChange={(e) => setImageLink(e.target.value)} value = {imageLink}/>  
             
