@@ -68,8 +68,8 @@ const Create = () => {
             >
               <option>Select tour company</option>  
               <option value="Wildroutes Staff">Wildroutes Staff</option>
-              <option value="Hydro Tour Guides">Hydro Watersports</option>
-              <option value="Cable Experiences">LandsEnd Experiences</option>
+              <option value="Hydro Watersports">Hydro Watersports</option>
+              <option value="LandsEnd Experiences">LandsEnd Experiences</option>
               <option value="National Trust Tours">National Trust Tours</option>
               <option value="Independent Tour Guide">Independent Tour Guide</option>
           </select>
