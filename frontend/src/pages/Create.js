@@ -30,7 +30,7 @@ const Create = () => {
             onChange={(e) => setRegion(e.target.value)} 
             value={region}
             >
-              <option>Select Region</option>  
+              <option>Select region</option>  
               <option value="sw">South West</option>
               <option value="se">South East</option>
               <option value="m">Midlands</option>
@@ -50,10 +50,14 @@ const Create = () => {
             onChange={(e) => setTag(e.target.value)} 
             value={tag}
             >
-              <option>Activity Type</option>  
-              <option value="Hike">Hike</option>
-              <option value="Swim">Swim</option>
-              <option value="Explore">Explore</option>
+              <option>Select activity type</option>  
+              <option value="Hike">Hiking / Trekking</option>
+              <option value="Camp">Camping / Nature</option>
+              <option value="Hunt">Hunting / Fishing</option>
+              <option value="Water">Swimming / Watersports</option>
+              <option value="Land">Biking / Landsports</option>
+              <option value="Explore">Exploring</option>
+              <option value="Other">Other</option>
           </select>
 
             <select 
@@ -62,10 +66,10 @@ const Create = () => {
             onChange={(e) => setMadeBy(e.target.value)} 
             value={madeBy}
             >
-              <option>Made By</option>  
+              <option>Select tour company</option>  
               <option value="Wildroutes Staff">Wildroutes Staff</option>
-              <option value="Hydro Tour Guides">Hydro Tour Guides</option>
-              <option value="Cable Experiences">Cable Experiences</option>
+              <option value="Hydro Tour Guides">Hydro Watersports</option>
+              <option value="Cable Experiences">LandsEnd Experiences</option>
               <option value="National Trust Tours">National Trust Tours</option>
               <option value="Independent Tour Guide">Independent Tour Guide</option>
           </select>
