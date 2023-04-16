@@ -77,17 +77,21 @@ const RouteDetails = ({route}) => {
         <div id="route-details">
             <img id ="myImg" src={route.image}></img>
             <h7>{route.likedBy.length} likes</h7>
-            <h3>{route.location}</h3>
+            <h3>📍 {route.location}</h3>
             <h2>{route.title}</h2> 
+            <h6>Posted by {route.madeBy}</h6>
             <p>{route.description}</p>
-            <h5>Book: {route.contactDetails}</h5>
+            <div class="book">
+                <form>
+                    <button formaction="http://google.com">Book</button>
+                </form>
+            </div>
             {route.likedBy.includes(user.idCode)
                 ? 
                     <i className="material-symbols-outlined"onClick={unlikePost}> close </i>
                 : 
                     <i className="material-symbols-outlined"onClick={likePost}>favorite</i>
             }
-            <h6>Posted by {route.madeBy}</h6>
             <div id="myModal" class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" id="img01"/>

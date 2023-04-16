@@ -50,7 +50,7 @@ const routeSchema = new Schema({
     image:{
         type: String,
         required: true,
-        default: "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-476744133-scaled.jpg"    
+        default: "https://images.pexels.com/photos/7130469/pexels-photo-7130469.jpeg"    
     }
 })
 

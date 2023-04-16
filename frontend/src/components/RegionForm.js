@@ -35,7 +35,7 @@ const RegionForm = () => {
 
   return (
     <form className="region-form" onSubmit={handleSubmit}> 
-      <h3>Search by Region 📍</h3>
+      <h3>Search by Region ⛰️</h3>
       <select 
         id="region"
         name="region" 
@@ -51,7 +51,7 @@ const RegionForm = () => {
           <option value="s">Scotland</option>
           <option value="w">Wales</option>
       </select>
-      <button>Go!</button>
+      <button>Search</button>
     </form>
   )
 }

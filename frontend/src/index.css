@@ -74,7 +74,8 @@ header a {
   text-align: center;
 }
 #route-details h2 {
-  margin: 0 20px -20px;
+  line-height: 120%;
+  margin: 30px 50px -20px;
   padding: 40px -10px 80px 40px;
   font-size: 1.5em;
   color: black;
@@ -102,12 +103,17 @@ header a {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 #route-details p {
-  margin: 0;
-  padding: 20px;
-  font-size: 0.8em;
+  margin: -10px;
+  padding: 0px;
+  font-size: 1em;
   color: #555;
   text-align: center;
 }
+
+#route-details button{
+  margin: 5% 44%;
+}
+
 #route-details i {
   position: absolute;
   top: 35px;
@@ -133,7 +139,6 @@ header a {
   cursor: pointer;
 }
 
-
 /* form */
 .region-form{
   background: #f5f5f5;
@@ -158,13 +163,14 @@ input, select {
   box-sizing: border-box;
 }
 form button {
-  background: var(--primary);
-  border: 0;
-  color: #fff;
-  padding: 10px;
-  font-family: "Poppins";
+  padding: 6px 10px;
   border-radius: 4px;
+  color: #000;
+  border: 2px solid #000;
   cursor: pointer;
+  font-size: .8em;
+  font-family: Poppins;
+  
 }
 div.error {
   padding: 10px;
@@ -185,7 +191,7 @@ nav {
 }
 
 nav a {
-  margin-left: 10px;
+  margin: 10px;
 }
 nav button {
   background: #000;
@@ -196,7 +202,7 @@ nav button {
   font-family: "Poppins";
   cursor: pointer;
   font-size: 1em;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 body {
@@ -274,9 +280,6 @@ body {
   }
 }
 
-
-
-
 /* auth forms */
 form.signup, form.login, form.create {
   max-width: 400px;
@@ -284,4 +287,8 @@ form.signup, form.login, form.create {
   padding: 50px;
   background: #f5f5f5;
   border-radius: 25px;
+}
+
+form.region-form{
+  max-width: 200px;
 }
