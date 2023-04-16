@@ -10,11 +10,12 @@ const Create = () => {
     const [tag,setTag] = useState('')
     const [madeBy,setMadeBy] = useState('')
     const [bookingLink,setBookingLink] = useState('')
+    const [imageLink,setImageLink] = useState('')
     const {post, error, isLoading} = usePost ()
 
     const handleSubmit = async(e) => {
         e.preventDefault()
-        await post(title, region, location, description, tag, madeBy, bookingLink)
+        await post(title, region, location, description, tag, madeBy, bookingLink, imageLink)
       } 
     
     return (
@@ -69,7 +70,9 @@ const Create = () => {
               <option value="Independent Tour Guide">Independent Tour Guide</option>
           </select>
 
-            <input type ="text" placeholder = "Booking Link" onChange={(e) => setBookingLink(e.target.value)} value = {bookingLink}/>    
+            <input type ="text" placeholder = "Booking Link" onChange={(e) => setBookingLink(e.target.value)} value = {bookingLink}/>   
+
+            <input type ="text" placeholder = "Image Link" onChange={(e) => setImageLink(e.target.value)} value = {imageLink}/>  
             
             <button disabled={isLoading}>Create</button>
             

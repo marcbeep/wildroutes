@@ -35,8 +35,11 @@ const routeSchema = new Schema({
     },
     bookingLink:{
         type: String,
-        required: true,
-        default: "https://marcbeep.com"
+        default: "https://github.com/marcbeep/Wildroutes"
+    },
+    imageLink:{
+        type: String,
+        default: "https://images.pexels.com/photos/7130469/pexels-photo-7130469.jpeg"    
     },
     noLikes:{
         type: Number,
@@ -46,12 +49,7 @@ const routeSchema = new Schema({
         {
             type: String
         }
-    ],
-    image:{
-        type: String,
-        required: true,
-        default: "https://images.pexels.com/photos/7130469/pexels-photo-7130469.jpeg"    
-    }
+    ]
 })
 
 // A model applies that schema to a particular model
