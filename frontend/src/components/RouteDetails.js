@@ -1,6 +1,5 @@
 import {useRoutesContext} from '../hooks/useRoutesContext'
 import { useAuthContext } from '../hooks/useAuthContext'
-import react from 'react'
 
 const getLargeImage = async() => {
     var modal = document.getElementById('myModal');
@@ -83,7 +82,7 @@ const RouteDetails = ({route}) => {
             <p>{route.description}</p>
             <div class="book">
                 <form>
-                    <button formaction="http://google.com">Book</button>
+                    <button formaction={route.bookingLink}>Book</button>
                 </form>
             </div>
             {route.likedBy.includes(user.idCode)

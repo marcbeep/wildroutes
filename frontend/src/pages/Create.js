@@ -1,6 +1,5 @@
 import {useState} from 'react'
 import { usePost } from '../hooks/usePost'
-import {useAuthContext} from '../hooks/useAuthContext'
 
 const Create = () => {
     
@@ -10,14 +9,12 @@ const Create = () => {
     const [description,setDescription] = useState('')
     const [tag,setTag] = useState('')
     const [madeBy,setMadeBy] = useState('')
-    const [contactDetails,setContactDetails] = useState('')
+    const [bookingLink,setBookingLink] = useState('')
     const {post, error, isLoading} = usePost ()
-    const {user} = useAuthContext()
-    //const madeBy = user.idCode
 
     const handleSubmit = async(e) => {
         e.preventDefault()
-        await post(title, region, location, description, tag, madeBy, contactDetails)
+        await post(title, region, location, description, tag, madeBy, bookingLink)
       } 
     
     return (
@@ -72,7 +69,7 @@ const Create = () => {
               <option value="Independent Tour Guide">Independent Tour Guide</option>
           </select>
 
-            <input type ="text" placeholder = "Contact Details" onChange={(e) => setContactDetails(e.target.value)} value = {contactDetails}/>    
+            <input type ="text" placeholder = "Booking Link" onChange={(e) => setBookingLink(e.target.value)} value = {bookingLink}/>    
             
             <button disabled={isLoading}>Create</button>
             

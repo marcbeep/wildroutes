@@ -33,10 +33,10 @@ const routeSchema = new Schema({
         required: true,
         default: "Wildroutes Staff"
     },
-    contactDetails:{
+    bookingLink:{
         type: String,
         required: true,
-        default: "No contact details"
+        default: "https://marcbeep.com"
     },
     noLikes:{
         type: Number,
