@@ -101,14 +101,14 @@ const getLikedRoutes = async(req, res) => {
 // Create new route
 const createRoute = async(req, res) => {
     
-    const{title, region, location, description, tag, bookingLink, imageLink} = req.body
+    const{title, region, location, rating, description, tag, bookingLink, imageLink} = req.body
     // Add doc to db
     //Added user_id and user_name
     try{
         const user_id = req.user._id
         const madeBy = req.user.name
         console.log(req.user.name)
-        const route = await Route.create({title, region, location, description, tag, bookingLink, imageLink,madeBy,user_id})
+        const route = await Route.create({title, region, location, rating, description, tag, bookingLink, imageLink, madeBy, user_id})
         res.status(200).json(route)
     }catch(error){
         res.status(400).json({error: error.message})

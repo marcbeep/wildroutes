@@ -10,11 +10,13 @@ const Create = () => {
     const [tag,setTag] = useState('')
     const [bookingLink,setBookingLink] = useState('')
     const [imageLink,setImageLink] = useState('')
+    const [rating,setRating] = useState('')
+
     const {post, error, isLoading} = usePost ()
 
     const handleSubmit = async(e) => {
         e.preventDefault()
-        await post(title, region, location, description, tag, bookingLink, imageLink)
+        await post(title, region, location, rating, description, tag, bookingLink, imageLink)
       } 
     
     return (
@@ -40,6 +42,20 @@ const Create = () => {
           </select>
 
             <input type ="text" placeholder = "City" onChange={(e) => setLocation(e.target.value)} value = {location}/>
+            
+            <select 
+            id="rating"
+            name="rating" 
+            onChange={(e) => setRating(e.target.value)} 
+            value={rating}
+            >
+              <option>Select rating</option>  
+              <option value="⭐️">⭐️</option>
+              <option value="⭐️⭐️">⭐️⭐️</option>
+              <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
+              <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
+              <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
+          </select>
 
             <input type ="text" placeholder = "Description" onChange={(e) => setDescription(e.target.value)} value = {description}/> 
             

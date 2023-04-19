@@ -53,6 +53,10 @@ const routeSchema = new Schema({
     user_id:{
         type: String,
         required: true
+    },
+    rating:{
+        type: String,
+        default: "No rating"
     }
 })
 

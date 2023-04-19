@@ -68,6 +68,7 @@ const RouteDetails = ({route}) => {
             <h3>📍 {route.location}</h3>
             <h2>{route.title}</h2> 
             <h6>Posted by {route.madeBy}</h6>
+            <p>{route.rating}</p>
             <p>{route.description}</p>
             <div class="book">
                 <form>

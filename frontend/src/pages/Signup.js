@@ -17,15 +17,17 @@ const Signup = () => {
         <form className = "signup" onSubmit={handleSubmit}>
             <h3>Sign Up</h3>
 
-            <label>Name</label>
+            <label>Full Name</label>
             <input 
             type ="text"
+            placeholder="John Doe"
             onChange={(e) => setName(e.target.value)}
             value = {name}
             />
-            <label>Location</label>
+            <label>City</label>
             <input 
             type ="text"
+            placeholder ="Liverpool"
             onChange={(e) => setLocation(e.target.value)}
             value = {location}
             />
@@ -33,6 +35,7 @@ const Signup = () => {
             <label>Email</label>
             <input 
             type ="email"
+            placeholder ="john@gmail.com"
             onChange={(e) => setEmail(e.target.value)}
             value = {email}
             />
@@ -40,6 +43,7 @@ const Signup = () => {
             <label>Password</label>
             <input 
             type ="password"
+            placeholder='P@$$w0rd'
             onChange={(e) => setPassword(e.target.value)}
             value = {password}
             />
