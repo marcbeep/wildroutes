@@ -7,7 +7,6 @@ const mongoose = require('mongoose')
 
 const getRoutes = async(req, res) => {
     /*
-    const user_id = req.user._id
     const routes = await Route.find({user_id})
     */
     const routes = await Route.find({}).sort({"location": 1})
@@ -95,10 +94,14 @@ const getLikedRoutes = async(req, res) => {
 // Create new route
 const createRoute = async(req, res) => {
     
-    const{title, region, location, description, tag, madeBy, bookingLink, imageLink} = req.body
+    const{title, region, location, description, tag, bookingLink, imageLink} = req.body
     // Add doc to db
+    //Added user_id and user_name
     try{
-        const route = await Route.create({title, region, location, description, tag, madeBy, bookingLink, imageLink})
+        const user_id = req.user._id
+        const madeBy = req.user.name
+        console.log(req.user.name)
+        const route = await Route.create({title, region, location, description, tag, bookingLink, imageLink,madeBy,user_id})
         res.status(200).json(route)
     }catch(error){
         res.status(400).json({error: error.message})
@@ -145,6 +148,14 @@ const updateRoute = async (req, res) => {
     res.status(200).json(route)
 }
 
+// getRoutes made by user 
+const myRoutes = async(req, res) =>{
+    const user_id = req.user._id
+    console.log(user_id)
+    const routes = await Route.find({user_id:user_id}).sort({"location": 1})
+    res.status(200).json(routes)
+}
+
 // Exports
 module.exports = {
     getRoutes,
@@ -156,5 +167,6 @@ module.exports = {
     getLikedRoutes,
     createRoute,
     deleteRoute,
-    updateRoute
+    updateRoute,
+    myRoutes
 }

@@ -9,7 +9,8 @@ const {
     getLikedRoutes,
     createRoute,
     deleteRoute,
-    updateRoute
+    updateRoute,
+    myRoutes
 }= require('../controllers/routeController')
 
 const requireAuth = require('../middleware/requireAuth')
@@ -38,6 +39,9 @@ router.delete('/like/:id', unLikeRoute)
 
 // Get all liked routes
 router.get('/liked', getLikedRoutes)
+
+//Get all routes made by user
+router.get('/myRoutes', myRoutes)
 
 // Post a new route
 router.post('/', createRoute)

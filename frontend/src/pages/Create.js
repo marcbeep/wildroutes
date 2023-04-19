@@ -8,14 +8,13 @@ const Create = () => {
     const [location, setLocation] = useState('')
     const [description,setDescription] = useState('')
     const [tag,setTag] = useState('')
-    const [madeBy,setMadeBy] = useState('')
     const [bookingLink,setBookingLink] = useState('')
     const [imageLink,setImageLink] = useState('')
     const {post, error, isLoading} = usePost ()
 
     const handleSubmit = async(e) => {
         e.preventDefault()
-        await post(title, region, location, description, tag, madeBy, bookingLink, imageLink)
+        await post(title, region, location, description, tag, bookingLink, imageLink)
       } 
     
     return (
@@ -60,28 +59,13 @@ const Create = () => {
               <option value="Other">Other</option>
           </select>
 
-            <select 
-            id="madeBy"
-            name="madeBy" 
-            onChange={(e) => setMadeBy(e.target.value)} 
-            value={madeBy}
-            >
-              <option>Select tour company</option>  
-              <option value="Wildroutes Staff">Wildroutes Staff</option>
-              <option value="Hydro Watersports">Hydro Watersports</option>
-              <option value="LandsEnd Experiences">LandsEnd Experiences</option>
-              <option value="National Trust Tours">National Trust Tours</option>
-              <option value="Independent Tour Guide">Independent Tour Guide</option>
-          </select>
+          <input type ="text" placeholder = "Booking Link" onChange={(e) => setBookingLink(e.target.value)} value = {bookingLink}/>   
 
-            <input type ="text" placeholder = "Booking Link" onChange={(e) => setBookingLink(e.target.value)} value = {bookingLink}/>   
-            {console.log(bookingLink)}
-
-            <input type ="text" placeholder = "Image Link" onChange={(e) => setImageLink(e.target.value)} value = {imageLink}/>  
+          <input type ="text" placeholder = "Image Link" onChange={(e) => setImageLink(e.target.value)} value = {imageLink}/>  
             
-            <button disabled={isLoading}>Create</button>
+          <button disabled={isLoading}>Create</button>
             
-            {error && <div className ="error">{error}</div>}
+          {error && <div className ="error">{error}</div>}
         
         </form>
     )

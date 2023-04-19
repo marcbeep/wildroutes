@@ -30,8 +30,7 @@ const routeSchema = new Schema({
     },
     madeBy:{
         type: String,
-        required: true,
-        default: "Wildroutes Staff"
+        default: "Wildroutes User"
     },
     bookingLink:{
         type: String,
@@ -49,7 +48,12 @@ const routeSchema = new Schema({
         {
             type: String
         }
-    ]
+    ],
+    //Added User_id this needs to be used so that only th right user can delete a post
+    user_id:{
+        type: String,
+        required: true
+    }
 })
 
 // A model applies that schema to a particular model

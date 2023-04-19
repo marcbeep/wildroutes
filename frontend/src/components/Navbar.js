@@ -22,6 +22,7 @@ const Navbar = () => {
                     <div>
                         <Link to="/create">🌁 Create</Link>
                         <Link to="/myadventures">❤️ Likes</Link>
+                        <Link to="/deleteadventures">📥 My Adventures</Link>
                         <button onClick={handleClick}>Logout {user.userName}</button>
                     </div>
                     )}

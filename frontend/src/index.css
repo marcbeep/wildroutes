@@ -3,7 +3,7 @@
 
 /* layout */
 :root {
-  --primary: #1649FF;
+  --primary: #104a24;
   --error: #e7195a;
 }
 body {
@@ -12,7 +12,7 @@ body {
   font-family: "Poppins";
 }
 header {
-  background:#000;
+  background: #104a24;
   align-items: center;
 }
 header h1{
@@ -125,6 +125,18 @@ header a {
   color: #333;
   text-align: center;
 }
+
+#route-details span {
+  position: absolute;
+  top: 35px;
+  left: 45px;
+  cursor: pointer;
+  background:  #f5f5f5;
+  padding: 5px;
+  border-radius: 50%;
+  color: #333;
+  text-align: center;
+}
 #overlay {
   position: fixed;
   display: block;
@@ -194,7 +206,7 @@ nav a {
   margin: 10px;
 }
 nav button {
-  background: #000;
+  background: #104a24;
   color: #fff;
   border: 2px solid #fff;
   padding: 6px 10px;

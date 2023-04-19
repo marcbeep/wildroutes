@@ -18,8 +18,9 @@ const loginUser = async (req, res) => {
         const token = createToken(user._id)
         const idCode = user._id
         const userName = user.name
+        location = user.location
 
-        res.status(200).json({email, userName, idCode, token})
+        res.status(200).json({email,location, userName, idCode, token})
 
     }catch(error){
 
@@ -30,17 +31,16 @@ const loginUser = async (req, res) => {
 
 // signup user
 const signupUser = async (req, res) => {
-    const {name, email, password} = req.body
+    const {name,location, email, password} = req.body
 
     try{
-        const user = await User.signup(name, email, password)
+        const user = await User.signup(name,location, email, password,)
 
         // create a token
         const token = createToken(user._id)
         const idCode = user._id
         const userName = user.name
-
-        res.status(200).json({userName, email, idCode, token})
+        res.status(200).json({userName,location, email, idCode, token})
 
     }catch(error){
 

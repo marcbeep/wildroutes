@@ -7,6 +7,7 @@ import Create from './pages/Create'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import MyAdventures from './pages/MyAdventures'
+import DeleteAdventures from './pages/DeleteAdventures'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
             <Route
               path="/myadventures"
               element={user ? <MyAdventures />: <Navigate to = "/"/>}
+            />
+            <Route
+              path="/deleteadventures"
+              element={user ? <DeleteAdventures />: <Navigate to = "/"/>}
             />
             <Route
               path="/login"

@@ -9,7 +9,7 @@ export const usePost = () => {
     const {user} = useAuthContext()
 
 
-    const post = async (title, region, location, description, tag, madeBy, bookingLink, imageLink) => {
+    const post = async (title, region, location, description, tag, bookingLink, imageLink) => {
         if(!user){
             return
         }
@@ -21,7 +21,7 @@ export const usePost = () => {
             headers: {
                 'Authorization': `Bearer ${user.token}`,
                 'Content-Type': 'application/json'},
-            body: JSON.stringify({title, region, location, description, tag, madeBy, bookingLink, imageLink})
+            body: JSON.stringify({title, region, location, description, tag, bookingLink, imageLink})
         })
         const json = await response.json()
 
