@@ -42,7 +42,7 @@ const RegionForm = () => {
         onChange={(e) => setRegion(e.target.value)} 
         value={region}
         >
-          <option value=" ">All</option>  
+          <option value=" ">Popular</option>  
           <option value="sw">South West</option>
           <option value="se">South East</option>
           <option value="m">Midlands</option>

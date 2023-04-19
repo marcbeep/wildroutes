@@ -6,8 +6,8 @@ import Home from './pages/Home'
 import Create from './pages/Create'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Likes from './pages/Likes'
 import MyAdventures from './pages/MyAdventures'
-import DeleteAdventures from './pages/DeleteAdventures'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -31,8 +31,8 @@ function App() {
               element={user ? <MyAdventures />: <Navigate to = "/"/>}
             />
             <Route
-              path="/deleteadventures"
-              element={user ? <DeleteAdventures />: <Navigate to = "/"/>}
+              path="/likes"
+              element={user ? <Likes />: <Navigate to = "/"/>}
             />
             <Route
               path="/login"

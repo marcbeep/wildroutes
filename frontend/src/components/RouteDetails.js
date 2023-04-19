@@ -63,8 +63,8 @@ const RouteDetails = ({route}) => {
 
     return(
         <div id="route-details">
-            <img id ="myImg" src={route.imageLink}></img>
-            <h7>{route.likedBy.length} likes</h7>
+            <img id ="myImg" alt = "Cover" src={route.imageLink}></img>
+            <h7>{route.noLikes} likes</h7>
             <h3>📍 {route.location}</h3>
             <h2>{route.title}</h2> 
             <h6>Posted by {route.madeBy}</h6>

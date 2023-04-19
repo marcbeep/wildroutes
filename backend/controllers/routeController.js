@@ -9,7 +9,7 @@ const getRoutes = async(req, res) => {
     /*
     const routes = await Route.find({user_id})
     */
-    const routes = await Route.find({}).sort({"location": 1})
+    const routes = await Route.find({}).sort({"noLikes": -1, "location": 1})
     res.status(200).json(routes)
 }
 
@@ -56,7 +56,11 @@ const likeRoute = async(req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'No such route'})
     }
-    const route = await Route.findOneAndUpdate({_id : id}, {$push : {likedBy: user_id}})
+    const route = await Route.findOneAndUpdate({_id : id}, {
+        $push : {likedBy: user_id}, 
+        $inc: {noLikes: 1}
+    })
+
     if(!route){
         return res.status(400).json({error: 'No such route'})
     }
@@ -74,7 +78,10 @@ const unLikeRoute = async(req, res) => {
         return res.status(404).json({error: 'No such route'})
     }
 
-    const route = await Route.findOneAndUpdate({_id : id}, {$pull : {likedBy: user_id}})
+    const route = await Route.findOneAndUpdate({_id : id}, {
+        $pull : {likedBy: user_id},
+        $inc : {noLikes: -1}
+    })
 
     if(!route){
         return res.status(400).json({error: 'No such route'})

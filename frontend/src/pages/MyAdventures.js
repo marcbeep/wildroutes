@@ -17,7 +17,7 @@ const MyAdventures = () =>{
         const fetchRoutes = async() => {
 
             // Fetch logic lives here
-            const response = await fetch('/api/routes/liked', {
+            const response = await fetch('/api/routes/myRoutes', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }

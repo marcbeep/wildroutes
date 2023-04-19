@@ -21,8 +21,8 @@ const Navbar = () => {
                     {user && (
                     <div>
                         <Link to="/create">🌁 Create</Link>
-                        <Link to="/myadventures">❤️ Likes</Link>
-                        <Link to="/deleteadventures">📥 My Adventures</Link>
+                        <Link to="/myadventures">⛰️ My Adventures</Link>
+                        <Link to="/likes">❤️ Likes</Link>
                         <button onClick={handleClick}>Logout {user.userName}</button>
                     </div>
                     )}
