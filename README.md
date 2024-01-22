@@ -1,6 +1,5 @@
 # Wildroutes
 A fullstack web app that allows users to explore new adventures.
-Live deploy [here](https://wildroutes.onrender.com)
 
 ## How to run
 1. Download or clone the repo.
